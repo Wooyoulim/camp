@@ -1,0 +1,106 @@
+.sub2 {
+    padding: 100px 0;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../images/content/sub2/hall0.jpg);
+    position: relative;
+}
+.sub2 span {
+    display: block;
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    background: #fff;
+    opacity: 80%;
+    top: 0;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    border-bottom: 3px solid #2c6443;
+    border-top: 3px solid #2c6443;
+    line-height: 80px;
+    text-align: center;
+    width: 1600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.sub2 article {
+    width: 1600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 80px;
+}
+
+article .list {
+    width: 600px;
+}
+article .list li {
+    height: 100px;
+    border-bottom: 1px solid #cccccc;
+}
+article .list li.on {
+    border-bottom: 2px solid #12a94e;
+}
+article .list li strong {
+    font-size: 24px;
+    font-weight: 700;
+    display: block;
+    padding-top: 15px;
+}
+article .list li strong.on {
+    color: #12a94e;
+}
+article .list li p {
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+article .mainPic {
+    width: 800px;
+}
+
+article .mainPic img {
+    width: 800px;
+    height: 500px;
+    border-radius: 15px;
+}
+
+#wrap button {
+    width: 100px;
+    height: 100px;
+    border: none;
+    border-radius: 20px;
+    background-color: #fff;
+    opacity: 0.4;
+}
+#wrap button i {
+    display: block;
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    color: #000;
+    text-align: center;
+    line-height: 100px;
+}
+#wrap button:hover {
+    opacity: 1;
+}
+#wrap .prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 20px;
+}
+#wrap .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css" />
+        <style></style>
+    </head>
+    <body>
+        <p id="skipNav"><a href="#content">본문 바로가기</a></p>
+        <div id="wrap">
+            <header id="header">
+                <div class="inner">
+                    <p class="logo">
+                        <a href="index.html"><img src="images/common/logo.png" alt="캠핑로고" /></a>
+                    </p>
+                    <ul class="gnb">
+                        <li><a href="sub1.html">입장안내</a></li>
+                        <li><a href="sub2.html">박람회장</a></li>
+                        <li><a href="sub3.html">전시목록</a></li>
+                        <li><a href="sub4.html">캠페인 알림</a></li>
+                        <li><a href="sub5.html">이벤트패키지</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!-- 여기까지 헤더 -->
+            <div id="mainVisual"></div>
+            <!-- 여기까지 메인 비주얼 -->
+
+            <main id="main">
+                <div class="inner">
+                    <div class="smallPic_left">
+                        <h3>
+                            <span>CAMFAIR</span>에서 <br />
+                            만나는 신나는 <span>캠핑의 세계</span>
+                        </h3>
+
+                        <ul class="smallPic">
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small0.jpg" alt="캠핑페어 품목1" id="1"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small1.jpg" alt="캠핑페어 품목2" id="2"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small2.jpg" alt="캠핑페어 품목3" id="3"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small3.jpg" alt="캠핑페어 품목4" id="4"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small4.jpg" alt="캠핑페어 품목5" id="5"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small5.jpg" alt="캠핑페어 품목6" id="6"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small6.jpg" alt="캠핑페어 품목7" id="7"
+                                /></a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/common/small7.jpg" alt="캠핑페어 품목8" id="8"
+                                /></a>
+                            </li>
+                        </ul>
+                        <div class="txtbox">
+                            <p class="number">현재번호</p>
+                            <p class="sum">총개수</p>
+                        </div>
+                        <h2>
+                            <a href="sub3.html"
+                                >캠핑페어 전시품목 바로가기<i class="bx bx-right-arrow-circle"></i
+                            ></a>
+                        </h2>
+                    </div>
+                    <div class="bigPic_right">
+                        <img src="images/common/big0.jpg" alt="캠핑페어 품목 큰사진" />
+                        <p class="img_title"><span></span></p>
+                    </div>
+                </div>
+            </main>
+            <!-- 여기까지 메인 페이지 -->
+            <footer id="footer">
+                <div class="inner">
+                    <p class="copy">Copyright © Yulim Woo. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+
+        <script>
+            'use strict';
+            let dom = document.querySelector('#wrap');
+            let img_btn = document.querySelectorAll('.smallPic li a img');
+            let img_big = document.querySelector('.bigPic_right img');
+            let btn = Array.from(img_btn);
+            let number = document.querySelector('.number');
+            let title = document.querySelector('.img_title');
+            let name = [
+                '캠핑차박',
+                '피크닉용품',
+                '레저용품',
+                '캠핑용품',
+                '페이먼트',
+                '캠핑텐트',
+                '레저스포츠',
+                '푸드관',
+            ];
+            let desc = [
+                '캠핑카, 캠핑 트레일러, 카라반, 캠핑카 튜닝, SUV 등',
+                '피크닉 매트, 바스켓, 팝업텐트, 런치플레이트, 커피메이커 등',
+                '사이클자전거, 모터바이크, 오프로드 차량, 스케이트보드, 배드민턴, 테니스-골프 등 일체품목',
+                '후방텐트, 사이드어닝, 테이블, 의자, 에어메트 등 일체품목',
+                '스마트관광, 시티투어, 지역 관광 상품, 지역 공연, 타워 및 관광 시설 등',
+                '텐트, 블랭킷, 캔들, 가랜드, 스트링라이트, 디자인소품 등',
+                '레저차량 부품, 소모품, 대체부품, 각종오일,첨가제 등 일체품목',
+                '캠핑 먹거리, 핑거푸드, 디저트, 간식 등',
+            ];
+
+            console.log(img_btn);
+
+            let sum = document.querySelector('.sum');
+            sum.innerHTML = `총 개수 : ${btn.length}`;
+            //
+
+            number.innerHTML = '현재번호 : 1 /';
+            title.innerHTML = `<p><span>캠핑차박</span> | 캠핑카, 캠핑 트레일러, 카라반, 캠핑카 튜닝, SUV 등</p>`;
+
+            btn.forEach((item, idx) => {
+                item.addEventListener('click', () => {
+                    img_big.setAttribute('src', `images/common/big${idx}.jpg`);
+                    title.innerHTML = `<p><span>${name[idx]}</span> | ${desc[idx]}</p>`;
+
+                    number.innerHTML = `현재번호 : ${item.getAttribute('id')} /`;
+                });
+                // item.addEventListener('mousedown', (e) => {
+                //     item.style.boxShadow = '3px 3px 10px 2px';
+                // });
+                // item.addEventListener('mouseup', (e) => {
+                //     item.style.boxShadow = 'none';
+                // });
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,7 @@
+#pageSub {
+    margin: 100px 0;
+}
+.page .inner {
+    display: flex;
+    justify-content: space-around;
+}

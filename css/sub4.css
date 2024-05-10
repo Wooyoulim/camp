@@ -1,0 +1,70 @@
+.sub4 {
+    position: relative;
+}
+.sub4 article {
+    width: 1000px;
+    margin: auto;
+    position: relative;
+}
+.sub4 article h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.sub4 article img {
+}
+
+.sub4 .list {
+    width: 500px;
+}
+.sub4 .list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 120px;
+    border-bottom: 1px solid #999;
+}
+
+.sub4 .list li:first-child {
+    border-top: 3px solid #999;
+}
+.sub4 .list li.on {
+    border-bottom: 4px solid #52651e;
+}
+
+.sub4 .list li .txtbox {
+}
+.sub4 .list li .txtbox strong {
+    display: block;
+    width: 320px;
+    font-size: 20px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.sub4 .list li .txtbox strong.on {
+    color: #52651e;
+    font-weight: 700;
+}
+.sub4 .list li .txtbox .time {
+}
+
+.sub4 .list li .imgbox {
+    width: 120px;
+    height: 60px;
+    /* overflow: inherit; */
+    overflow: hidden;
+}
+
+.sub4 .list li .imgbox img {
+    width: 120px;
+    height: 60px;
+    /* overflow: inherit; */
+    overflow: hidden;
+    /* display: block; */
+    box-sizing: border-box;
+}

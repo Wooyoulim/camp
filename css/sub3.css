@@ -1,0 +1,97 @@
+.sub3 {
+    position: relative;
+}
+.sub3 .inner {
+    position: relative;
+}
+.sub3 article {
+    width: 1600px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-top: 15px solid #52651e;
+    border-bottom: 15px solid #52651e;
+    z-index: 10;
+}
+
+.sub3 article .listname {
+    position: absolute;
+    display: flex;
+    justify-content: start;
+    top: -75px;
+    height: 60px;
+}
+.sub3 article .listname li {
+    text-align: left;
+    font-size: 30px;
+    font-weight: 500;
+    padding: 0 30px;
+    line-height: 60px;
+    color: #fff;
+    background: #92a168;
+    border-radius: 15px 15px 0 0;
+}
+.sub3 article .listname li.active {
+    background: #52651e;
+}
+.sub3 h2 {
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 100px;
+    left: 0;
+}
+
+.sub3 .number {
+    width: 100%;
+    display: block;
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+}
+.sub3 article .number strong {
+    font-size: 20px;
+}
+.sub3 article .number .sum {
+    font-size: 20px;
+    margin: 0;
+}
+
+.sub3 article .big {
+    width: 800px;
+    margin-top: 20px;
+    display: none;
+}
+.sub3 article .big.on {
+    display: block;
+}
+.sub3 article .big img {
+    width: 800px;
+}
+.sub3 article .small {
+    display: none;
+}
+.sub3 article .small.on {
+    display: block;
+}
+.sub3 article .small .thum {
+    /* background: #52651e; */
+    padding: 20px;
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.sub3 article .small .thum li {
+    border: 3px solid #999;
+    margin-bottom: 10px;
+}
+.sub3 article .small .thum li.on {
+    border: 3px solid rgb(221, 213, 94);
+}
+.sub3 article .small .thum li img {
+    width: 200px;
+    height: 170px;
+}

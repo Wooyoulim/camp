@@ -1,0 +1,55 @@
+.sub3 {
+    position: relative;
+}
+.sub3 article {
+    width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: top;
+    position: relative;
+}
+.sub3 h2{
+    font-size: 24px;
+    position: absolute;
+    top: -50px;
+    left: 120px;
+}
+
+.sub3 .number {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: -50px;
+    left: 700px;
+}
+.sub3 article .number strong {
+    font-size: 20px;
+}
+.sub3article .number .sum {
+    font-size: 20px;
+}
+
+.sub3 article .big {
+    width: 700px;
+}
+.sub3 article .big img {
+    width: 700px;
+}
+.sub3 article .thum {
+    width: 640px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.sub3 article .thum li {
+    border: 3px solid #999;
+    margin-bottom: 10px;
+}
+.sub3 article .thum li.on {
+    border: 3px solid hotpink;
+}
+.sub3 article .thum li img {
+    width: 200px;
+    height: 170px;
+}
