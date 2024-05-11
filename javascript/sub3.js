@@ -64,7 +64,7 @@ let siteArr = [
     { id: 12, url: 'https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8' },
 ];
 
-let subjectCar = [
+let subjectcar = [
     '가성비가 좋은 캠핑카',
     '자동차를 넘어 즐거움이 모이는 플랫폼',
     '움직이는 별장, 3가지 매력',
@@ -78,7 +78,7 @@ let subjectCar = [
     '캠핑족 겨냥한 쏘카 캠핑카',
     '새로운 감각의 1톤 캠핑카',
 ];
-let subjectItem = [
+let subjectitem = [
     '불편함이 낭만이 되는 순간',
     '감성적인 캠핑을 위한 필수품',
     '가볍게 쏙 챙길 수 있는 캠핑용품',
@@ -92,7 +92,7 @@ let subjectItem = [
     '올 봄 한정 특가세일',
     '선물하기 좋은 캠핑용품',
 ];
-let subjectTent = [
+let subjecttent = [
     '원터치 캠핑텐트',
     '거실형 텐트 4인용',
     '천막과 텐트의 일체형공간',
@@ -138,9 +138,9 @@ let $carli = getAll('article .small .thum.car li');
 let $itemli = getAll('article .small .thum.item li');
 let $tentli = getAll('article .small .thum.tent li');
 let $big = get('article .big img');
-let $bigCar = get('article #car img');
-let $bigItem = get('article #item img');
-let $bigTent = get('article #tent img');
+let $bigcar = get('article #car img');
+let $bigitem = get('article #item img');
+let $bigtent = get('article #tent img');
 let $h2 = get('h2');
 let cnt = 0;
 let $url = getAll('article .small.on li img');
@@ -151,12 +151,27 @@ let tentUrl = '';
 
 //타이머
 let timer = '',
-    timer1 = '',
-    timer2 = '',
-    timer3 = '',
+    timercar = '',
+    timeritem = '',
+    timertent = '',
     interval = 3000;
 
-timer1 = setInterval(make1, interval);
+timer = setInterval(make, interval);
+
+function make() {
+    cnt++;
+    if (cnt >= siteArr.length - 1) {
+        cnt = 0;
+    }
+
+    $carli.forEach((li, idx) => {
+        li.classList.remove('on');
+    });
+    $carli[cnt].classList.add('on');
+    $bigcar.setAttribute('src', carArr[cnt].src);
+    $number.textContent = `번호 : ${cnt + 1}`;
+    $h2.textContent = subjectcar[cnt];
+}
 function make1() {
     cnt++;
     if (cnt >= siteArr.length - 1) {
@@ -167,13 +182,10 @@ function make1() {
         li.classList.remove('on');
     });
     $carli[cnt].classList.add('on');
-    $bigCar.setAttribute('src', carArr[cnt].src);
+    $bigcar.setAttribute('src', carArr[cnt].src);
     $number.textContent = `번호 : ${cnt + 1}`;
-    $h2.textContent = subjectCar[cnt];
+    $h2.textContent = subjectcar[cnt];
 }
-
-timer2 = setInterval(make2, interval);
-
 function make2() {
     cnt++;
     if (cnt >= siteArr.length - 1) {
@@ -184,14 +196,10 @@ function make2() {
         li.classList.remove('on');
     });
     $itemli[cnt].classList.add('on');
-
-    $bigItem.setAttribute('src', itemArr[cnt].src);
+    $bigitem.setAttribute('src', itemArr[cnt].src);
     $number.textContent = `번호 : ${cnt + 1}`;
-    $h2.textContent = subjectItem[cnt];
+    $h2.textContent = subjectitem[cnt];
 }
-
-timer3 = setInterval(make3, interval);
-
 function make3() {
     cnt++;
     if (cnt >= siteArr.length - 1) {
@@ -202,10 +210,11 @@ function make3() {
         li.classList.remove('on');
     });
     $tentli[cnt].classList.add('on');
-    $bigTent.setAttribute('src', tentArr[cnt].src);
+    $bigtent.setAttribute('src', tentArr[cnt].src);
     $number.textContent = `번호 : ${cnt + 1}`;
-    $h2.textContent = subjectTent[cnt];
+    $h2.textContent = subjecttent[cnt];
 }
+
 //탭 클릭
 
 let $tab = getAll('article .listname li');
@@ -221,23 +230,29 @@ $tab.forEach((tab, idx) => {
         e.currentTarget.classList.add('active');
         clearInterval(timer);
         if (tab.textContent === '캠핑카') {
-            $h2.textContent = subjectCar[0];
+            $h2.textContent = subjectcar[0];
             $number.textContent = '번호: 1';
-            clearInterval(timer2);
-            clearInterval(timer3);
-            timer1 = setInterval(make1, interval);
+            cnt = 0;
+            clearInterval(timeritem);
+            clearInterval(timertent);
+            timercar = setInterval(make1, interval);
         } else if (tab.textContent === '피크닉용품') {
-            $h2.textContent = subjectItem[0];
+            $h2.textContent = subjectitem[0];
             $number.textContent = '번호: 1';
-            clearInterval(timer1);
-            clearInterval(timer3);
-            timer2 = setInterval(make2, interval);
+            cnt = 0;
+            clearInterval(timercar);
+            clearInterval(timertent);
+
+            timeritem = setInterval(make2, interval);
         } else if (tab.textContent === '캠핑텐트') {
-            $h2.textContent = subjectTent[0];
+            $h2.textContent = subjecttent[0];
             $number.textContent = '번호: 1';
-            clearInterval(timer2);
-            clearInterval(timer1);
-            timer3 = setInterval(make3, interval);
+
+            cnt = 0;
+            clearInterval(timeritem);
+            clearInterval(timertent);
+
+            timertent = setInterval(make3, interval);
         }
 
         $tabimg.forEach((imgs) => {
@@ -255,19 +270,18 @@ $tab.forEach((tab, idx) => {
 //클릭
 $carli.forEach((car, idx) => {
     car.addEventListener('click', (e) => {
-        $carli.forEach((carli) => {
+        $carli.forEach((carli, idx) => {
             carli.classList.remove('on');
         });
         e.currentTarget.classList.add('on');
         carUrl = `images/content/sub3/car${idx}.jpg`;
-        $bigCar.setAttribute('src', carUrl);
+        $bigcar.setAttribute('src', carUrl);
         $number.textContent = `번호 : ${idx + 1}`;
-        $h2.textContent = subjectCar[idx];
-        clearInterval(timer);
-        clearInterval(timer2);
-        clearInterval(timer1);
-        clearInterval(timer3);
-        timer1 = setInterval(make1, interval);
+        $h2.textContent = subjectcar[idx];
+        cnt = idx;
+
+        clearInterval(timercar);
+        timercar = setInterval(make1, interval);
     });
 });
 
@@ -278,14 +292,12 @@ $itemli.forEach((item, idx) => {
         });
         e.currentTarget.classList.add('on');
         itemUrl = `images/content/sub3/item${idx}.jpg`;
-        $bigItem.setAttribute('src', itemUrl);
+        $bigitem.setAttribute('src', itemUrl);
         $number.textContent = `번호 : ${idx + 1}`;
-        $h2.textContent = subjectItem[idx];
-        clearInterval(timer);
-        clearInterval(timer2);
-        clearInterval(timer1);
-        clearInterval(timer3);
-        timer2 = setInterval(make2, interval);
+        $h2.textContent = subjectitem[idx];
+        cnt = idx;
+        clearInterval(timeritem);
+        timeritem = setInterval(make2, interval);
     });
 });
 
@@ -296,28 +308,18 @@ $tentli.forEach((tent, idx) => {
         });
         e.currentTarget.classList.add('on');
         tentUrl = `images/content/sub3/tent${idx}.jpg`;
-        $bigTent.setAttribute('src', tentUrl);
+        $bigtent.setAttribute('src', tentUrl);
         $number.textContent = `번호 : ${idx + 1}`;
-        $h2.textContent = subjectTent[idx];
-        clearInterval(timer);
-        clearInterval(timer2);
-        clearInterval(timer1);
-        clearInterval(timer3);
-        timer3 = setInterval(make3, interval);
+        $h2.textContent = subjecttent[idx];
+        cnt = idx;
+        clearInterval(timertent);
+        timertent = setInterval(make3, interval);
     });
 });
 //
 
 //마우스 이벤트
 let $hover = get('article .big');
-
-$hover.addEventListener('mouseenter', (e) => {
-    clearInterval(timer1);
-    clearInterval(timer2);
-    clearInterval(timer3);
-});
-
-$hover.addEventListener('mouseleave', (e) => {});
 
 $big.addEventListener('click', (e) => {
     window.open(siteArr[cnt].url);
