@@ -1,20 +1,51 @@
-# UIUX 웹앱 디자인 & 프론트엔드 개발 국비지원 수업 개인 과제
-자바스크립트 수업 예제를 활용하여 나만의 캠핑 박람회 사이트 만들기
+# 🖥️JAVASCRIPT를 활용하여 나만의 사이트 만들어보기
 
-### 사용언어
--`HTML`
--`CSS`
--`JAVASCRIPT`
+<br>
 
-### 주요 기능
+<img width="1200" alt="캠핑박람회 홈페이지" src="https://github.com/Wooyoulim/daelim/assets/168395738/d2108418-3ad0-4f10-8579-631dae8537eb">
 
-1. 자바스크립트 타이머 활용
+<br>
+<br>
 
-2. 클릭 시 메인 이미지 변경
+- 다양한 자바스크립트 기능 구현 연습하기
+- 바로가기 : wooyoulim.github.io/camp/
 
-3. 다음 버튼 클릭 시, 아이템 넘어가기
+- 활용 Skills : <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /> 
+  <br>
+  <br>
+## 🎯 과제 목적
 
-4. 아이템 롤링
+**- 자바스크립트 수업 예제를 활용하여 나만의 캠핑 박람회 사이트 만들기**
+ <br>
+  <br>
 
-5. 클릭 시 다른 페이지로 연결
+## 📢기능구현
+
+#### 👉🏻 클릭 이벤트
+
+- 클릭 시 페이지 이동 또는 이미지 및 텍스트 내용 변경
+- 슬라이드 이동
+- 타이머 기능 일시정지 및 재가동
+    <br>
+    <br>
+
+ #### 👉🏻 롤링 이벤트
+
+- 마지막 배열을 맨 처음으로, 맨 처음 배열을 맨 마지막으로 이동 
+    <br>
+    <br>
+
+ #### 👉🏻 타이머 이벤트
+
+- 일정 시간 후, 이미지 및 텍스트 내용 자동 변경
+    <br>
+    <br>
+
+
+
+
+ 
+    
+    
+
 
